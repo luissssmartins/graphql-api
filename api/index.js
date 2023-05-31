@@ -17,3 +17,7 @@ const typeDefs = [userSchema];
 const resolvers = {};
 
 const server = new ApolloServer({typeDefs, resolvers});
+
+server.listen().then(({url}) => {
+    console.log(`Servidor rodando na porta ${url}`);
+});
