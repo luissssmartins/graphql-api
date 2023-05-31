@@ -6,6 +6,11 @@ const userSchema = gql `
     ativo: Boolean!
     email: String
   }
+
+  type Query {
+    users: [User]!
+    firstUser: User
+  }
 `
 
 module.exports = userSchema;
