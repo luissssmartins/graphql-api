@@ -7,6 +7,7 @@
     "start": "nodemon -e js,json,graphql ./api/index.js"
   },
   "dependencies": {
+    "apollo-datasource-rest": "^3.7.0",
     "apollo-server": "^3.12.0",
     "graphql": "^16.6.0",
     "graphql-tools": "^9.0.0",
