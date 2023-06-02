@@ -9,7 +9,9 @@ const typeDefs = [userSchema];
 const resolvers = [userResolvers];
 
 const server = new ApolloServer({typeDefs, resolvers, dataSources: () => {
-    usersAPI = new UsersAPI;
+   return {
+    usersAPI: new UsersAPI()
+   }
 }});
 
 server.listen().then(({url}) => {
