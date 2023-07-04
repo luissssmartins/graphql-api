@@ -2,7 +2,7 @@ const { GraphQLScalarType } = require('graphql')
 
 const userResolvers = {
 
-    RolesType: {
+    RoleType: {
         ESTUDANTE: "ESTUDANTE",
         DOCENTE: "DOCENTE",
         COORDENACAO: "COORDENACAO"
