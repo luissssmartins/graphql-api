@@ -11,12 +11,20 @@ scalar DateTime
     createdAt: DateTime
   }
 
+  input UserInput {
+    nome: String
+    ativo: Boolean
+    email: String
+    role: RoleType
+    createdAt: DateTime
+  }
+
   type Role {
     id: ID!
     type: String
   }
 
-  enum RolesType {
+  enum RoleType {
     ESTUDANTE
     DOCENTE
     COORDENACAO
@@ -28,8 +36,8 @@ scalar DateTime
   }
 
   type Mutation {
-    createUser(nome: String!, ativo: Boolean!, email: String!, role: String!, createdAt: DateTime): User!
-    updateUser(id: ID!, nome: String!, ativo: Boolean!, email: String!, role: RolesType!): User!
+    createUser(user: UserInput): User!
+    updateUser(id: ID!, user: UserInput): User!
     deleteUser(id: ID!): ID!
   }
 `
