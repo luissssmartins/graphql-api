@@ -37,8 +37,24 @@ scalar DateTime
 
   type Mutation {
     createUser(user: UserInput): User!
-    updateUser(id: ID!, user: UserInput): User!
-    deleteUser(id: ID!): ID!
+    updateUser(id: ID!, user: UserInput): QueryResponseUpdateType!
+    deleteUser(id: ID!): QueryResponseDeleteType!
+  }
+
+  interface QueryResponse {
+    code: Int!
+    message: String!
+  }
+
+  type QueryResponseDeleteType implements QueryResponse {
+    code: Int!
+    message: String!
+  }
+
+  type QueryResponseUpdateType implements QueryResponse {
+    code: Int!
+    message: String!
+    user: User!
   }
 `
 
